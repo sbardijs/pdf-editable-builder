@@ -19,8 +19,12 @@ bun install
 ### Running the Application
 
 ```bash
-bun run index.js
+bun run start
 ```
+
+## View the app
+Open [http://localhost:3000](http://localhost:3000) see the rendered CV, click on edit, change some info and save.
+Then download it.
 
 ## How It Works
 
