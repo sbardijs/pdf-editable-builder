@@ -1,0 +1,20 @@
+{
+  "name": "pdf-editable-builder",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.mjs"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "nodemon": "^3.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "puppeteer": "^22.9.0"
+  }
+}

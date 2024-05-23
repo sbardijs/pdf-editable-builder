@@ -1,0 +1,80 @@
+{
+  "name": "James",
+  "lastname": "Prince",
+  "image": "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg",
+  "contact": {
+    "address": "Phoenix, AZ 85023",
+    "phone": "(555) 555-5555",
+    "email": "example@example.com"
+  },
+  "objective": "Dedicated and accomplished sociology assistant professor seeking a tenure-track position. Passionate about fostering academic development and supporting learning objectives. Committed to inspiring and mentoring students while contributing to sociological discourse through rigorous academic research.",
+  "qualifications": [
+    "Research methodology",
+    "Curriculum development",
+    "Data analysis (SPSS, STATA)",
+    "Qualitative and quantitative research",
+    "Social theory",
+    "Student mentorship",
+    "Academic writing",
+    "Statistical analysis",
+    "Panificio"
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. Sociology",
+      "institution": "Arizona State University",
+      "details": [
+        "Dissertation: 'Contemporary Urban Dynamics'"
+      ]
+    },
+    {
+      "degree": "Master of Arts: Sociology",
+      "institution": "Arizona State University - Tempe, AZ",
+      "details": []
+    },
+    {
+      "degree": "Bachelor of Arts: Social Sciences",
+      "institution": "Arizona State University - Phoenix, AZ",
+      "details": [
+        "Relevant coursework:",
+        "Sociology",
+        "Social Research Methods",
+        "Social Theory",
+        "Criminology",
+        "Urban Sociology",
+        "Social Movements and Change"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Assistant Professor",
+      "organization": "Grand Canyon University – Phoenix, AZ",
+      "duration": "01/2021 to Current",
+      "details": [
+        "Develop and refine course materials for 10 undergraduate and graduate courses in sociology with over 150 students.",
+        "Collaborate in curriculum improvement, leading to a 15% increase in student engagement and a 12% rise in overall course ratings.",
+        "Support 20 undergraduate and graduate students, resulting in three award-winning research projects at the university’s annual academic symposium."
+      ]
+    },
+    {
+      "title": "Lecturer",
+      "organization": "The University Of Arizona – Phoenix, AZ",
+      "duration": "09/2016 to 12/2020",
+      "details": [
+        "Developed and taught introductory sociology courses for a diverse student body of 300, demonstrating adaptability in instruction and curricular design.",
+        "Revitalized the college’s research club, fostering a culture of inquiry and academic exploration, which led to a 30% increase in student research presentations at local conferences.",
+        "Collaborated on a research project with the College of Education, examining the impact of early education on children’s social development, resulting in a co-authored article in the 'Journal of Educational Sociology.'"
+      ]
+    },
+    {
+      "title": "Graduate Research Assistant",
+      "organization": "Arizona State University, Tempe Campus – Tempe, AZ",
+      "duration": "06/2013 to 08/2016",
+      "details": [
+        "Supported a comprehensive research project focused on gender and social inequality, which included data collection, qualitative analysis and report writing.",
+        "Assisted in teaching undergraduate sociology courses to 60 students, delivering lectures on research methods, leading discussions and grading assignments."
+      ]
+    }
+  ]
+}

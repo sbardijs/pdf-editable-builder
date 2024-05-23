@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Template</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        align-items: flex-start;
+        justify-items: flex-start;
+      }
+      .sidebar {
+        top: 0;
+        position: sticky;
+        width: 200px;
+        padding: 10px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .content {
+        margin: 8px 20px 20px 20px;
+        display: flex;
+        background-color: #fff;
+        /* margin-left: 20px; */
+      }
+      .button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+      }
+      .cv-page {
+        flex-grow: 1;
+        padding: 10mm; /* Reduced padding for smaller size */
+        min-height: 297mm;
+        min-width: 210mm;
+        max-width: 210mm; /* Half of 210mm for smaller size */
+        width: 210mm;
+        height: fit-content; /* Half of 297mm for smaller size */
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <% if (editable) { %>
+        <button class="button" onclick="submitForm()">Save</button>
+        <button class="button" onclick="discardChanges()">Discard</button>
+        <% } else { %>
+        <button class="button" onclick="window.location.href='/edit'">
+          Edit
+        </button>
+        <button class="button" onclick="window.location.href='/download'">
+          Download
+        </button>
+        <% } %>
+      </div>
+      <div class="content"><%- body %></div>
+    </div>
+
+    <% if (editable) { %>
+    <script>
+      function submitForm() {
+        const form = document.getElementById("cvForm");
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        data.qualifications = formData.getAll("qualifications[]");
+        data.education = Array.from(
+          document.querySelectorAll('[name="education[degree][]"]')
+        ).map((_, i) => ({
+          degree: formData.getAll("education[degree][]")[i],
+          institution: formData.getAll("education[institution][]")[i],
+          details: formData
+            .getAll("education[details][]")
+            .slice(i * 6, (i + 1) * 6), // Adjust for number of detail entries per education block
+        }));
+        data.experience = Array.from(
+          document.querySelectorAll('[name="experience[title][]"]')
+        ).map((_, i) => ({
+          title: formData.getAll("experience[title][]")[i],
+          organization: formData.getAll("experience[organization][]")[i],
+          duration: formData.getAll("experience[duration][]")[i],
+          details: formData
+            .getAll("experience[details][]")
+            .slice(i * 3, (i + 1) * 3), // Adjust for number of detail entries per experience block
+        }));
+
+        fetch("/update", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              window.location.href = "/";
+            } else {
+              alert("Failed to save data.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("An error occurred while saving data.");
+          });
+      }
+
+      function discardChanges() {
+        window.location.href = "/";
+      }
+    </script>
+    <% } %>
+  </body>
+</html>
